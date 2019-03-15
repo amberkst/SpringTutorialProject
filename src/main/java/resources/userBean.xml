@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean
+		class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
+
+	<bean id="user" class="dependencyChecking.User">
+		<property name="name" value="Ethan" />
+		<property name="address">
+			<bean id="address" class="dependencyChecking.Address">
+				<property name="uAddress" value="London" />
+			</bean>
+		</property>
+		<property name="contactNo" value="9971" />
+	</bean>
+
+</beans>
